@@ -1,11 +1,11 @@
-#include "main.h"
+ï»¿#include "main.h"
 #include "STC15F104E.H"
 #include <intrins.h> 
  
-#define _Nop() _nop_();_nop_();_nop_();_nop_();_nop_();_nop_();_nop_();_nop_();_nop_();_nop_();_nop_();_nop_();_nop_();_nop_() /*¶¨Òå¿ÕÖ¸Áî*/ 
+#define _Nop() _nop_();_nop_();_nop_();_nop_();_nop_();_nop_();_nop_();_nop_();_nop_();_nop_();_nop_();_nop_();_nop_();_nop_() /*å®šä¹‰ç©ºæŒ‡ä»¤*/ 
  
-sbit SDA=P3^4; /*Ä£ÄâI2CÊı¾İ´«ËÍÎ»*/ 
-sbit SCL=P3^5; /*Ä£ÄâI2CÊ±ÖÓ¿ØÖÆÎ»*/ 
+sbit SDA=P3^4; /*æ¨¡æ‹ŸI2Cæ•°æ®ä¼ é€ä½*/ 
+sbit SCL=P3^5; /*æ¨¡æ‹ŸI2Cæ—¶é’Ÿæ§åˆ¶ä½*/ 
 
 #define LM75A 0x90
 

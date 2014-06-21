@@ -1,15 +1,15 @@
-#include "init.h"
+ï»¿#include "init.h"
 #include "main.h"
 #include <intrins.h>
 
 
-//#define ADC_POWER   0x80            //ADCµçÔ´¿ØÖÆÎ»
-//#define ADC_FLAG    0x10            //ADCÍê³É±êÖ¾
-//#define ADC_START   0x08            //ADCÆğÊ¼¿ØÖÆÎ»
-//#define ADC_SPEEDLL 0x00            //540¸öÊ±ÖÓ
-//#define ADC_SPEEDL  0x20            //360¸öÊ±ÖÓ
-//#define ADC_SPEEDH  0x40            //180¸öÊ±ÖÓ
-//#define ADC_SPEEDHH 0x60            //90¸öÊ±ÖÓ
+//#define ADC_POWER   0x80            //ADCç”µæºæ§åˆ¶ä½
+//#define ADC_FLAG    0x10            //ADCå®Œæˆæ ‡å¿—
+//#define ADC_START   0x08            //ADCèµ·å§‹æ§åˆ¶ä½
+//#define ADC_SPEEDLL 0x00            //540ä¸ªæ—¶é’Ÿ
+//#define ADC_SPEEDL  0x20            //360ä¸ªæ—¶é’Ÿ
+//#define ADC_SPEEDH  0x40            //180ä¸ªæ—¶é’Ÿ
+//#define ADC_SPEEDHH 0x60            //90ä¸ªæ—¶é’Ÿ
 
 //extern void InitUart();
 extern void InitADC();

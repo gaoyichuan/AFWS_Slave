@@ -1,4 +1,4 @@
-#include "main.h"
+ï»¿#include "main.h"
 #include "nrf24l01.h"
 #include "spi.h"
 #include "delay.h"
@@ -10,7 +10,7 @@
 #include "I2C.H"
 
 uchar Water_Upper_Bond = 50;
-uchar data MRD[2]={0x01,0x02}; //½ÓÊÕ»º³åÇø 
+uchar data MRD[2]={0x01,0x02}; //æ¥æ”¶ç¼“å†²åŒº 
 
 
 //uchar AFWS_Get_Humidity()
@@ -24,7 +24,7 @@ void nRF24L01_Send_Humidity()
 {
 //	 uchar tmph;
 //	 tmph = AFWS_Get_Humidity();
-     IRcvStr(LM75A,0x00,MRD,2); //¶ÁÈ¡LM75Aµ±Ç°ÎÂ¶ÈÖµ 	 delay_ms(10);
+     IRcvStr(LM75A,0x00,MRD,2); //è¯»å–LM75Aå½“å‰æ¸©åº¦å€¼ 	 delay_ms(10);
 	 RX_BUF[3] = COMMAND_DATA;
 	 RX_BUF[4] = SLAVE_CODE;
 	 RX_BUF[5] = GetADCResult(Sensor_ADC_Channel);

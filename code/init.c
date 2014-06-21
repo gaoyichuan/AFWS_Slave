@@ -1,4 +1,4 @@
-#include "init.h"
+ï»¿#include "init.h"
 #include "STC15F104E.H"
 
 void Interrupt0_Init(void)
@@ -16,7 +16,7 @@ void Interrupt1_Init(void)
 }
 
 /*----------------------------
-ADCÈí¼şÑÓÊ±
+ADCè½¯ä»¶å»¶æ—¶
 ----------------------------*/
 extern void Delay(WORD n)
 {
@@ -30,16 +30,16 @@ extern void Delay(WORD n)
 }
 
 /*----------------------------
-³õÊ¼»¯ADC
+åˆå§‹åŒ–ADC
 ----------------------------*/
 void InitADC(void)
 {
 	P10 = 0;
 	//P1M0 = 0x01;
 	//P1M1 = 0x01;
-	P1ASF = 0x01;                   //ÉèÖÃP1¿ÚÎªAD¿Ú
-    ADC_RES = 0;                    //Çå³ı½á¹û¼Ä´æÆ÷
+	P1ASF = 0x01;                   //è®¾ç½®P1å£ä¸ºADå£
+    ADC_RES = 0;                    //æ¸…é™¤ç»“æœå¯„å­˜å™¨
     ADC_CONTR = ADC_POWER | ADC_SPEEDLL;
-    Delay(2);                       //ADCÉÏµç²¢ÑÓÊ±
+    Delay(2);                       //ADCä¸Šç”µå¹¶å»¶æ—¶
 }
 

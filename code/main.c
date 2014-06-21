@@ -1,4 +1,4 @@
-#include "STC15F104E.H"
+ï»¿#include "STC15F104E.H"
 #include <intrins.h>
 #include "INIT.H"
 #include "main.h"
@@ -28,8 +28,8 @@ void main()
 	
 	while(1)
 		{
-        PCON = 0x02;            //MCU½øÈëµôµçÄ£Ê½
-        _nop_();                //µôµçÄ£Ê½±»»½ĞÑºó,Ê×ÏÈÖ´ĞĞ´ËÓï¾ä,È»ºóÔÙ½øÈëÖĞ¶Ï·şÎñ³ÌĞò
+        PCON = 0x02;            //MCUè¿›å…¥æ‰ç”µæ¨¡å¼
+        _nop_();                //æ‰ç”µæ¨¡å¼è¢«å”¤é†’å,é¦–å…ˆæ‰§è¡Œæ­¤è¯­å¥,ç„¶åå†è¿›å…¥ä¸­æ–­æœåŠ¡ç¨‹åº
         _nop_();
 		}
 }
@@ -39,7 +39,7 @@ void Interrupt0() interrupt 0
 	uchar temp;
 	uchar bit_flag;
 	temp=SPI_Read(STATUS);
-	SPI_RW_Reg(WRITE_REG+STATUS,temp);//ÇåÖĞ¶Ï
+	SPI_RW_Reg(WRITE_REG+STATUS,temp);//æ¸…ä¸­æ–­
 	bit_flag=check_bit(temp,6);
 	L2=0;
 //	delay_ms(100);
@@ -56,7 +56,7 @@ void Interrupt0() interrupt 0
 		}
 	}
 	L2 = 1;
-	nRF24L01_FlushRX(); //Çå³ı½ÓÊÕ»º³åÇøÊı¾İ
+	nRF24L01_FlushRX(); //æ¸…é™¤æ¥æ”¶ç¼“å†²åŒºæ•°æ®
 	delay_ms(200);
 	RX_Mode();
 	//delay_ms(200);
@@ -64,17 +64,17 @@ void Interrupt0() interrupt 0
 
 void Interrupt1_Key_Deal() interrupt 2
 {
-	delay_ms(20);      //Èí¼şÑÓÊ±Ïû¶¶
+	delay_ms(20);      //è½¯ä»¶å»¶æ—¶æ¶ˆæŠ–
 	if(butt == 0)
 	{
-		delay_ms(1000); //¼ì²âÊÇ·ñ³¤°´
+		delay_ms(1000); //æ£€æµ‹æ˜¯å¦é•¿æŒ‰
 		if(butt == 0)
 		{
-			AFWS_Man_Control_Water(); //ÊÖ¶¯½½¹à
+			AFWS_Man_Control_Water(); //æ‰‹åŠ¨æµ‡çŒ
 		}
 		else
 		{
-			AFWS_Set_Hum_Bound(); //ÉèÖÃ½½¹àÉÏÏŞ
+			AFWS_Set_Hum_Bound(); //è®¾ç½®æµ‡çŒä¸Šé™
 		}
 	}
 }

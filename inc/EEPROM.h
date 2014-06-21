@@ -1,10 +1,10 @@
-//-----------------------------------------------
+ï»¿//-----------------------------------------------
 
 
-#define CMD_IDLE    0               //¿ÕÏĞÄ£Ê½
-#define CMD_READ    1               //IAP×Ö½Ú¶ÁÃüÁî
-#define CMD_PROGRAM 2               //IAP×Ö½Ú±à³ÌÃüÁî
-#define CMD_ERASE   3               //IAPÉÈÇø²Á³ıÃüÁî
+#define CMD_IDLE    0               //ç©ºé—²æ¨¡å¼
+#define CMD_READ    1               //IAPå­—èŠ‚è¯»å‘½ä»¤
+#define CMD_PROGRAM 2               //IAPå­—èŠ‚ç¼–ç¨‹å‘½ä»¤
+#define CMD_ERASE   3               //IAPæ‰‡åŒºæ“¦é™¤å‘½ä»¤
 
 //#define ENABLE_IAP 0x80           //if SYSCLK<30MHz
 //#define ENABLE_IAP 0x81           //if SYSCLK<24MHz
@@ -15,7 +15,7 @@
 //#define ENABLE_IAP 0x86           //if SYSCLK<2MHz
 //#define ENABLE_IAP 0x87           //if SYSCLK<1MHz
 
-//²âÊÔµØÖ·
+//æµ‹è¯•åœ°å€
 #define IAP_ADDRESS 0x0300
 
 void EEPDelay(unsigned char n);

@@ -1,4 +1,4 @@
-#include "main.h"
+ï»¿#include "main.h"
 #include "STC15F104E.H"
 
 sbit CSN=		P1^3;
@@ -9,8 +9,8 @@ sbit CE=		P1^7;
 sbit IRQ=		P3^2;
 
 
-#define		TX_ADR_WIDTH		5		//5×Ö½Ú¿í¶ÈµÄ·¢ËÍ/½ÓÊÕµØÖ·
-#define		TX_PLOAD_WIDTH		32		//Êı¾İÍ¨µÀÓĞĞ§Êı¾İ¿í¶È
+#define		TX_ADR_WIDTH		5		//5å­—èŠ‚å®½åº¦çš„å‘é€/æ¥æ”¶åœ°å€
+#define		TX_PLOAD_WIDTH		32		//æ•°æ®é€šé“æœ‰æ•ˆæ•°æ®å®½åº¦
 
 
 #define		READ_REG		0x00

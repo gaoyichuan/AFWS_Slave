@@ -1,11 +1,11 @@
-
+ï»¿
 #define uchar unsigned char
 #define uint unsigned  int
 
 #define SLAVE_CODE 0x11
 #define Sensor_ADC_Channel 0
 
-/* AFWSÖ¸Áî³£Á¿ºê¶¨Òå */
+/* AFWSæŒ‡ä»¤å¸¸é‡å®å®šä¹‰ */
 #define COMMAND_GET 0x10
 #define COMMAND_WATER 0x11
 #define COMMAND_STOP_WATER 0x12

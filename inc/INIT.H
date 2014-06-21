@@ -1,4 +1,4 @@
-#include "STC15F104E.H"
+ï»¿#include "STC15F104E.H"
 #ifndef __INIT_H__
 #define __INIT_H__
 
@@ -12,17 +12,17 @@ extern void InitADC(void);
 typedef unsigned char BYTE;
 typedef unsigned int WORD;
 
-#define     URMD    0           //0:Ê¹ÓÃ¶¨Ê±Æ÷2×÷Îª²¨ÌØÂÊ·¢ÉúÆ÷
-                                //1:Ê¹ÓÃ¶¨Ê±Æ÷1µÄÄ£Ê½0(16Î»×Ô¶¯ÖØÔØÄ£Ê½)×÷Îª²¨ÌØÂÊ·¢ÉúÆ÷
-                                //2:Ê¹ÓÃ¶¨Ê±Æ÷1µÄÄ£Ê½2(8Î»×Ô¶¯ÖØÔØÄ£Ê½)×÷Îª²¨ÌØÂÊ·¢ÉúÆ÷
+#define     URMD    0           //0:ä½¿ç”¨å®šæ—¶å™¨2ä½œä¸ºæ³¢ç‰¹ç‡å‘ç”Ÿå™¨
+                                //1:ä½¿ç”¨å®šæ—¶å™¨1çš„æ¨¡å¼0(16ä½è‡ªåŠ¨é‡è½½æ¨¡å¼)ä½œä¸ºæ³¢ç‰¹ç‡å‘ç”Ÿå™¨
+                                //2:ä½¿ç”¨å®šæ—¶å™¨1çš„æ¨¡å¼2(8ä½è‡ªåŠ¨é‡è½½æ¨¡å¼)ä½œä¸ºæ³¢ç‰¹ç‡å‘ç”Ÿå™¨
 
-#define ADC_POWER   0x80            //ADCµçÔ´¿ØÖÆÎ»
-#define ADC_FLAG    0x10            //ADCÍê³É±êÖ¾
-#define ADC_START   0x08            //ADCÆğÊ¼¿ØÖÆÎ»
-#define ADC_SPEEDLL 0x00            //540¸öÊ±ÖÓ
-#define ADC_SPEEDL  0x20            //360¸öÊ±ÖÓ
-#define ADC_SPEEDH  0x40            //180¸öÊ±ÖÓ
-#define ADC_SPEEDHH 0x60            //90¸öÊ±ÖÓ
+#define ADC_POWER   0x80            //ADCç”µæºæ§åˆ¶ä½
+#define ADC_FLAG    0x10            //ADCå®Œæˆæ ‡å¿—
+#define ADC_START   0x08            //ADCèµ·å§‹æ§åˆ¶ä½
+#define ADC_SPEEDLL 0x00            //540ä¸ªæ—¶é’Ÿ
+#define ADC_SPEEDL  0x20            //360ä¸ªæ—¶é’Ÿ
+#define ADC_SPEEDH  0x40            //180ä¸ªæ—¶é’Ÿ
+#define ADC_SPEEDHH 0x60            //90ä¸ªæ—¶é’Ÿ
 
 sbit L1 = P3^6;
 sbit L2 = P3^7;

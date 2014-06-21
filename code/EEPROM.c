@@ -1,16 +1,16 @@
-/*---------------------------------------------------------------------*/
+ï»¿/*---------------------------------------------------------------------*/
 /* --- STC MCU Limited ------------------------------------------------*/
-/* --- STC15F4K60S4 ÏµÁÐ ÄÚ²¿EEPROM¾ÙÀý--------------------------------*/
+/* --- STC15F4K60S4 ç³»åˆ— å†…éƒ¨EEPROMä¸¾ä¾‹--------------------------------*/
 /* --- Mobile: (86)13922805190 ----------------------------------------*/
 /* --- Fax: 86-755-82905966 -------------------------------------------*/
 /* --- Tel: 86-755-82948412 -------------------------------------------*/
 /* --- Web: www.STCMCU.com --------------------------------------------*/
-/* Èç¹ûÒªÔÚ³ÌÐòÖÐÊ¹ÓÃ´Ë´úÂë,ÇëÔÚ³ÌÐòÖÐ×¢Ã÷Ê¹ÓÃÁËºê¾§¿Æ¼¼µÄ×ÊÁÏ¼°³ÌÐò   */
-/* Èç¹ûÒªÔÚÎÄÕÂÖÐÓ¦ÓÃ´Ë´úÂë,ÇëÔÚÎÄÕÂÖÐ×¢Ã÷Ê¹ÓÃÁËºê¾§¿Æ¼¼µÄ×ÊÁÏ¼°³ÌÐò   */
+/* å¦‚æžœè¦åœ¨ç¨‹åºä¸­ä½¿ç”¨æ­¤ä»£ç ,è¯·åœ¨ç¨‹åºä¸­æ³¨æ˜Žä½¿ç”¨äº†å®æ™¶ç§‘æŠ€çš„èµ„æ–™åŠç¨‹åº   */
+/* å¦‚æžœè¦åœ¨æ–‡ç« ä¸­åº”ç”¨æ­¤ä»£ç ,è¯·åœ¨æ–‡ç« ä¸­æ³¨æ˜Žä½¿ç”¨äº†å®æ™¶ç§‘æŠ€çš„èµ„æ–™åŠç¨‹åº   */
 /*---------------------------------------------------------------------*/
 
-//±¾Ê¾ÀýÔÚKeil¿ª·¢»·¾³ÏÂÇëÑ¡ÔñIntelµÄ8058Ð¾Æ¬ÐÍºÅ½øÐÐ±àÒë
-//¼Ù¶¨²âÊÔÐ¾Æ¬µÄ¹¤×÷ÆµÂÊÎª18.432MHz
+//æœ¬ç¤ºä¾‹åœ¨Keilå¼€å‘çŽ¯å¢ƒä¸‹è¯·é€‰æ‹©Intelçš„8058èŠ¯ç‰‡åž‹å·è¿›è¡Œç¼–è¯‘
+//å‡å®šæµ‹è¯•èŠ¯ç‰‡çš„å·¥ä½œé¢‘çŽ‡ä¸º18.432MHz
 
 #include "STC15F104E.H"
 #include "intrins.h"
@@ -20,38 +20,38 @@ unsigned char EEPROM_Save_Water_Bound(unsigned char bound)
 {															  
     unsigned int i;
 
-    //P1 = 0xfe;                      //1111,1110 ÏµÍ³OK
-    EEPDelay(10);                      //ÑÓÊ±
-    IapEraseSector(IAP_ADDRESS);    //ÉÈÇø²Á³ý
-    for (i=0; i<512; i++)           //¼ì²âÊÇ·ñ²Á³ý³É¹¦(È«FF¼ì²â)
+    //P1 = 0xfe;                      //1111,1110 ç³»ç»ŸOK
+    EEPDelay(10);                      //å»¶æ—¶
+    IapEraseSector(IAP_ADDRESS);    //æ‰‡åŒºæ“¦é™¤
+    for (i=0; i<512; i++)           //æ£€æµ‹æ˜¯å¦æ“¦é™¤æˆåŠŸ(å…¨FFæ£€æµ‹)
     {
         if (IapReadByte(IAP_ADDRESS+i) != 0xff)
-            goto Error;             //Èç¹û³ö´í,ÔòÍË³ö
+            goto Error;             //å¦‚æžœå‡ºé”™,åˆ™é€€å‡º
     }
-    //P1 = 0xfc;                      //1111,1100 ²Á³ý³É¹¦
-    EEPDelay(10);                      //ÑÓÊ±
-    //for (i=0; i<512; i++)           //±à³Ì512×Ö½Ú
+    //P1 = 0xfc;                      //1111,1100 æ“¦é™¤æˆåŠŸ
+    EEPDelay(10);                      //å»¶æ—¶
+    //for (i=0; i<512; i++)           //ç¼–ç¨‹512å­—èŠ‚
     //{
         IapProgramByte(IAP_ADDRESS, (unsigned char)bound);
     //}
-    //P1 = 0xf8;                      //1111,1000 ±à³ÌÍê³É
-    EEPDelay(10);                      //ÑÓÊ±
-    //for (i=0; i<512; i++)           //Ð£Ñé512×Ö½Ú
+    //P1 = 0xf8;                      //1111,1000 ç¼–ç¨‹å®Œæˆ
+    EEPDelay(10);                      //å»¶æ—¶
+    //for (i=0; i<512; i++)           //æ ¡éªŒ512å­—èŠ‚
     //{
         if (IapReadByte(IAP_ADDRESS) != (unsigned char)bound)
-            goto Error;             //Èç¹ûÐ£Ñé´íÎó,ÔòÍË³ö
+            goto Error;             //å¦‚æžœæ ¡éªŒé”™è¯¯,åˆ™é€€å‡º
     //}
-    //P1 = 0xf0;                      //1111,0000 ²âÊÔÍê³É
+    //P1 = 0xf0;                      //1111,0000 æµ‹è¯•å®Œæˆ
     //while (1);
 	return 0;
 Error:
-    //P1 &= 0x7f;                     //0xxx,xxxx IAP²Ù×÷Ê§°Ü
+    //P1 &= 0x7f;                     //0xxx,xxxx IAPæ“ä½œå¤±è´¥
     //while (1);
 	return 1;
 }
 
 /*----------------------------
-Èí¼þÑÓÊ±
+è½¯ä»¶å»¶æ—¶
 ----------------------------*/
 void EEPDelay(unsigned char n)
 {
@@ -65,65 +65,65 @@ void EEPDelay(unsigned char n)
 }
 
 /*----------------------------
-¹Ø±ÕIAP
+å…³é—­IAP
 ----------------------------*/
 void IapIdle()
 {
-    IAP_CONTR = 0;                  //¹Ø±ÕIAP¹¦ÄÜ
-    IAP_CMD = 0;                    //Çå³ýÃüÁî¼Ä´æÆ÷
-    IAP_TRIG = 0;                   //Çå³ý´¥·¢¼Ä´æÆ÷
-    IAP_ADDRH = 0x80;               //½«µØÖ·ÉèÖÃµ½·ÇIAPÇøÓò
+    IAP_CONTR = 0;                  //å…³é—­IAPåŠŸèƒ½
+    IAP_CMD = 0;                    //æ¸…é™¤å‘½ä»¤å¯„å­˜å™¨
+    IAP_TRIG = 0;                   //æ¸…é™¤è§¦å‘å¯„å­˜å™¨
+    IAP_ADDRH = 0x80;               //å°†åœ°å€è®¾ç½®åˆ°éžIAPåŒºåŸŸ
     IAP_ADDRL = 0;
 }
 
 /*----------------------------
-´ÓISP/IAP/EEPROMÇøÓò¶ÁÈ¡Ò»×Ö½Ú
+ä»ŽISP/IAP/EEPROMåŒºåŸŸè¯»å–ä¸€å­—èŠ‚
 ----------------------------*/
 unsigned char IapReadByte(unsigned int addr)
 {
-    unsigned char dat;                       //Êý¾Ý»º³åÇø
+    unsigned char dat;                       //æ•°æ®ç¼“å†²åŒº
 
-    IAP_CONTR = ENABLE_IAP;         //Ê¹ÄÜIAP
-    IAP_CMD = CMD_READ;             //ÉèÖÃIAPÃüÁî
-    IAP_ADDRL = addr;               //ÉèÖÃIAPµÍµØÖ·
-    IAP_ADDRH = addr >> 8;          //ÉèÖÃIAP¸ßµØÖ·
-    IAP_TRIG = 0x5a;                //Ð´´¥·¢ÃüÁî(0x5a)
-    IAP_TRIG = 0xa5;                //Ð´´¥·¢ÃüÁî(0xa5)
-    _nop_();                        //µÈ´ýISP/IAP/EEPROM²Ù×÷Íê³É
-    dat = IAP_DATA;                 //¶ÁISP/IAP/EEPROMÊý¾Ý
-    IapIdle();                      //¹Ø±ÕIAP¹¦ÄÜ
+    IAP_CONTR = ENABLE_IAP;         //ä½¿èƒ½IAP
+    IAP_CMD = CMD_READ;             //è®¾ç½®IAPå‘½ä»¤
+    IAP_ADDRL = addr;               //è®¾ç½®IAPä½Žåœ°å€
+    IAP_ADDRH = addr >> 8;          //è®¾ç½®IAPé«˜åœ°å€
+    IAP_TRIG = 0x5a;                //å†™è§¦å‘å‘½ä»¤(0x5a)
+    IAP_TRIG = 0xa5;                //å†™è§¦å‘å‘½ä»¤(0xa5)
+    _nop_();                        //ç­‰å¾…ISP/IAP/EEPROMæ“ä½œå®Œæˆ
+    dat = IAP_DATA;                 //è¯»ISP/IAP/EEPROMæ•°æ®
+    IapIdle();                      //å…³é—­IAPåŠŸèƒ½
 
-    return dat;                     //·µ»Ø
+    return dat;                     //è¿”å›ž
 }
 
 /*----------------------------
-Ð´Ò»×Ö½ÚÊý¾Ýµ½ISP/IAP/EEPROMÇøÓò
+å†™ä¸€å­—èŠ‚æ•°æ®åˆ°ISP/IAP/EEPROMåŒºåŸŸ
 ----------------------------*/
 void IapProgramByte(unsigned int addr, unsigned char dat)
 {
-    IAP_CONTR = ENABLE_IAP;         //Ê¹ÄÜIAP
-    IAP_CMD = CMD_PROGRAM;          //ÉèÖÃIAPÃüÁî
-    IAP_ADDRL = addr;               //ÉèÖÃIAPµÍµØÖ·
-    IAP_ADDRH = addr >> 8;          //ÉèÖÃIAP¸ßµØÖ·
-    IAP_DATA = dat;                 //Ð´ISP/IAP/EEPROMÊý¾Ý
-    IAP_TRIG = 0x5a;                //Ð´´¥·¢ÃüÁî(0x5a)
-    IAP_TRIG = 0xa5;                //Ð´´¥·¢ÃüÁî(0xa5)
-    _nop_();                        //µÈ´ýISP/IAP/EEPROM²Ù×÷Íê³É
+    IAP_CONTR = ENABLE_IAP;         //ä½¿èƒ½IAP
+    IAP_CMD = CMD_PROGRAM;          //è®¾ç½®IAPå‘½ä»¤
+    IAP_ADDRL = addr;               //è®¾ç½®IAPä½Žåœ°å€
+    IAP_ADDRH = addr >> 8;          //è®¾ç½®IAPé«˜åœ°å€
+    IAP_DATA = dat;                 //å†™ISP/IAP/EEPROMæ•°æ®
+    IAP_TRIG = 0x5a;                //å†™è§¦å‘å‘½ä»¤(0x5a)
+    IAP_TRIG = 0xa5;                //å†™è§¦å‘å‘½ä»¤(0xa5)
+    _nop_();                        //ç­‰å¾…ISP/IAP/EEPROMæ“ä½œå®Œæˆ
     IapIdle();
 }
 
 /*----------------------------
-ÉÈÇø²Á³ý
+æ‰‡åŒºæ“¦é™¤
 ----------------------------*/
 void IapEraseSector(unsigned int addr)
 {
-    IAP_CONTR = ENABLE_IAP;         //Ê¹ÄÜIAP
-    IAP_CMD = CMD_ERASE;            //ÉèÖÃIAPÃüÁî
-    IAP_ADDRL = addr;               //ÉèÖÃIAPµÍµØÖ·
-    IAP_ADDRH = addr >> 8;          //ÉèÖÃIAP¸ßµØÖ·
-    IAP_TRIG = 0x5a;                //Ð´´¥·¢ÃüÁî(0x5a)
-    IAP_TRIG = 0xa5;                //Ð´´¥·¢ÃüÁî(0xa5)
-    _nop_();                        //µÈ´ýISP/IAP/EEPROM²Ù×÷Íê³É
+    IAP_CONTR = ENABLE_IAP;         //ä½¿èƒ½IAP
+    IAP_CMD = CMD_ERASE;            //è®¾ç½®IAPå‘½ä»¤
+    IAP_ADDRL = addr;               //è®¾ç½®IAPä½Žåœ°å€
+    IAP_ADDRH = addr >> 8;          //è®¾ç½®IAPé«˜åœ°å€
+    IAP_TRIG = 0x5a;                //å†™è§¦å‘å‘½ä»¤(0x5a)
+    IAP_TRIG = 0xa5;                //å†™è§¦å‘å‘½ä»¤(0xa5)
+    _nop_();                        //ç­‰å¾…ISP/IAP/EEPROMæ“ä½œå®Œæˆ
     IapIdle();
 }
 
