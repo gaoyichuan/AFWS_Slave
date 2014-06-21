@@ -1,4 +1,4 @@
-﻿#include "bit.h"
+#include "bit.h"
 #include "main.h"
 
 uchar check_bit(uchar data1,uchar num)

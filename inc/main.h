@@ -1,4 +1,4 @@
-﻿
+
 #define uchar unsigned char
 #define uint unsigned  int
 
@@ -13,3 +13,8 @@
 #define COMMAND_MANWATER 0x14
 #define COMMAND_ASK_IF_WATER 0x15
 #define COMMAND_WATER_CONFIG 0x18
+
+/* AFWS物联网指令宏定义 */
+#define COMMAND_IOT_WATER 0x21
+#define COMMAND_IOT_STOP_WATER 0x22
+#define COMMAND_IOT_AUTO_WATER 0x23

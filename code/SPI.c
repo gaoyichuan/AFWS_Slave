@@ -1,4 +1,4 @@
-﻿#include "main.h"
+#include "main.h"
 #include "STC15F104E.H"
 #include "nRF24L01.h"
 void SPI_Init(void)

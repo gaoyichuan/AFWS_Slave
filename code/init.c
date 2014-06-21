@@ -1,4 +1,4 @@
-﻿#include "init.h"
+#include "init.h"
 #include "STC15F104E.H"
 
 void Interrupt0_Init(void)

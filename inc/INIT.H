@@ -1,4 +1,4 @@
-﻿#include "STC15F104E.H"
+#include "STC15F104E.H"
 #ifndef __INIT_H__
 #define __INIT_H__
 

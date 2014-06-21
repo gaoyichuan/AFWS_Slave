@@ -1,4 +1,4 @@
-﻿#include "STC15F104E.H"
+#include "STC15F104E.H"
 #include <intrins.h>
 #include "INIT.H"
 #include "main.h"

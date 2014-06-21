@@ -1,4 +1,4 @@
-﻿#include "main.h"
+#include "main.h"
 #include "STC15F104E.H"
 
 sbit CSN=		P1^3;

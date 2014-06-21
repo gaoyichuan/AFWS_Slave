@@ -1,4 +1,4 @@
-﻿
+
 extern void SPI_Init(void);
 extern uchar SPI_RW(uchar byte);
 extern uchar SPI_RW_Reg(uchar reg,uchar value);

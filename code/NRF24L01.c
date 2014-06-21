@@ -1,4 +1,4 @@
-﻿#include "main.h"
+#include "main.h"
 #include "NRF24L01.h"
 #include "SPI.h"
 #include "delay.h"
